@@ -1,7 +1,6 @@
 # BRICS Sentiment Analysis
 Delve into the collective sentiment of the global community as we analyze public perspectives on the inclusion of six new member nations in the BRICS alliance. This sentiment analysis provides valuable insights into how individuals perceive and respond to the evolving dynamics within this influential coalition, offering a nuanced understanding of public sentiment towards the new additions. Uncover the diverse range of opinions, emotions, and reactions as we navigate the intricacies of international relations and the impact on public discourse.
 
-Note: The labeling is done based on likes on the comments.
 <img width="926" alt="Screenshot 2024-06-10 170311" src="https://github.com/tanuj437/New-BRICS-members-Sentiment-Analysis-518/assets/128210429/53f68679-6d6e-4180-bab0-6fc61051a9c7">
 
 ## 📝 Abstract
