@@ -34,6 +34,8 @@ The models are trained on the training dataset and evaluation is done.
 ### Project Directory Structure
 ```
 BRICS Sentiment Analysis
+|- streamlit
+  |- config.toml
 |- Dataset
   |- BRICS.csv
   |- README.md
