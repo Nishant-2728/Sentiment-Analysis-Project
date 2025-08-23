@@ -6,11 +6,6 @@ The goal of this sentiment analysis web application is to understand public perc
 ## Model(s) Used for the Web App 🧮
 The model used in this web app is a pre-trained LightGBM classifier, which has been fine-tuned for sentiment analysis. The BERT model is used for encoding the text into embeddings, and the LightGBM model predicts the sentiment with high accuracy.
 
-## Video Demonstration 🎥
-
-
-https://github.com/tanuj437/New-BRICS-members-Sentiment-Analysis-518/assets/128210429/38ec46c6-2e87-431a-8492-f8bead880390
-
 
 
 ## How to Run the Web App
