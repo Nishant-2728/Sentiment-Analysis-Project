@@ -6,19 +6,24 @@ from transformers import BertTokenizer, BertModel
 import torch
 import os
 
-# Relative path to Model folder
-model_path = os.path.join(os.path.dirname(__file__), "..", "Model", "lgb_model.pkl")
+@st.cache_resource
+def load_lgb_model():
+    try:
+        with open("Model/lgb_model.pkl", "rb") as file:
+            return pickle.load(file)
+    except FileNotFoundError:
+        st.error("❌ Model file not found. Please ensure 'lgb_model.pkl' exists in the Model folder.")
+        return None
 
-try:
-    with open(model_path, 'rb') as file:
-        lgb_model = pickle.load(file)
-except FileNotFoundError:
-    lgb_model = None
-    st.error("Model file not found. Please ensure 'lgb_model.pkl' exists in the Model folder.")
+@st.cache_resource
+def load_bert():
+    tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+    model = BertModel.from_pretrained('bert-base-uncased')
+    return tokenizer, model
 
-# Load the BERT tokenizer and model for encoding
-tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-model = BertModel.from_pretrained('bert-base-uncased')
+# Load models
+lgb_model = load_lgb_model()
+tokenizer, model = load_bert()
 
 def encode_text(text):
     encoded_input = tokenizer(text, padding='max_length', truncation=True, return_tensors='pt', max_length=128)
@@ -48,3 +53,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
